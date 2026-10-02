@@ -2,9 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('CI Smoke Check') {
+        stage('Setup Python Environment') {
             steps {
-                echo 'Aegis AI OrangeHRM CI pipeline started successfully'
+                sh '''
+                    python3 -m venv .venv
+                    .venv/bin/python -m pip install --upgrade pip
+                    .venv/bin/python -m pip install .
+                '''
             }
         }
     }
