@@ -11,5 +11,21 @@ pipeline {
                 '''
             }
         }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                sh '''
+                    .venv/bin/python -m playwright install chromium
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    .venv/bin/python -m pytest tests/ui -v
+                '''
+            }
+        }
     }
 }
