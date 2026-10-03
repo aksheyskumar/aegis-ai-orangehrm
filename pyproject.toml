@@ -8,6 +8,7 @@ dependencies = [
     "pytest-asyncio>=1.4",
     "pytest-playwright>=0.9",
     "playwright>=1.63",
+    "allure-pytest>=2.16",
     "python-dotenv>=1.0"
 ]
 [tool.pytest.ini_options]
