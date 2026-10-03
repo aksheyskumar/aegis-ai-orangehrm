@@ -30,7 +30,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                    .venv/bin/python -m pytest tests/ui -v
+                    .venv/bin/python -m pytest tests/ui -v --alluredir=reports/allure-results
                 '''
             }
         }
