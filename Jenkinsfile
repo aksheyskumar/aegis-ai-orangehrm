@@ -3,8 +3,8 @@ pipeline {
     environment {
         BASE_URL = 'https://opensource-demo.orangehrmlive.com'
         ENV = 'qa'
-        BROWSER=chromium
-        HEADLESS=false
+        BROWSER='chromium'
+        HEADLESS='false'
 
     }
 
