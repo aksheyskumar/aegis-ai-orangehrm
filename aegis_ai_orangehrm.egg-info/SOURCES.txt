@@ -1,0 +1,13 @@
+pyproject.toml
+aegis_ai_orangehrm.egg-info/PKG-INFO
+aegis_ai_orangehrm.egg-info/SOURCES.txt
+aegis_ai_orangehrm.egg-info/dependency_links.txt
+aegis_ai_orangehrm.egg-info/requires.txt
+aegis_ai_orangehrm.egg-info/top_level.txt
+framework/__init__.py
+framework/core/base_page.py
+framework/core/config.py
+framework/fixtures/__init__.py
+framework/fixtures/browser.py
+framework/pages/dashboard_page.py
+framework/pages/login_page.py
