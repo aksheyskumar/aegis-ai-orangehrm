@@ -1,11 +1,11 @@
 pipeline {
     agent any
+
     environment {
         BASE_URL = 'https://opensource-demo.orangehrmlive.com'
         ENV = 'qa'
-        BROWSER='chromium'
-        HEADLESS='true'
-
+        BROWSER = 'chromium'
+        HEADLESS = 'true'
     }
 
     stages {
@@ -32,6 +32,14 @@ pipeline {
                 sh '''
                     .venv/bin/python -m pytest tests/ui -v --alluredir=reports/allure-results
                 '''
+            }
+        }
+
+        stage('Publish Allure Report') {
+            steps {
+                allure([
+                    results: [[path: 'reports/allure-results']]
+                ])
             }
         }
     }
