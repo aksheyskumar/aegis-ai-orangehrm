@@ -4,7 +4,7 @@ pipeline {
         BASE_URL = 'https://opensource-demo.orangehrmlive.com'
         ENV = 'qa'
         BROWSER='chromium'
-        HEADLESS='false'
+        HEADLESS='true'
 
     }
 
