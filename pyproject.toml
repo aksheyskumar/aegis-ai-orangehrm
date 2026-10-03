@@ -13,3 +13,5 @@ dependencies = [
 testpaths = ["tests"]
 pythonpath = ["."]
 addopts = "-v"
+[tool.setuptools.packages.find]
+include = ["framework*"]
