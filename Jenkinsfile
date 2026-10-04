@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    parameters {
+        string(
+            name: 'WORKERS',
+            defaultValue: '2',
+            description: 'Number of pytest-xdist workers'
+        )
+    }
 
     environment {
         BASE_URL = 'https://opensource-demo.orangehrmlive.com'
@@ -30,7 +37,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                    .venv/bin/python -m pytest tests/ui -v --alluredir=reports/allure-results
+                    .venv/bin/python -m pytest tests/ui -v -n ${WORKERS} --alluredir=reports/allure-results
                 '''
             }
         }
